@@ -1,0 +1,20 @@
+Part-of-speech tagger for French.
+--------------------------------
+Benoit Favre <benoit.favre@lif.univ-mrs.fr> 2012
+
+Requires CRFSuite 0.12 (http://www.chokkan.org/software/crfsuite/) and python2 or pypy.
+crfutils.py and add-contextual-features.py (pos.py) are copied from the CRFSuite source code.
+
+echo Ça le fait. | ./run-tagger.sh 
+Ça PRO
+le CLO
+fait V
+. PONCT
+ 
+Trained on the French Treebank 6 (http://www.llf.cnrs.fr/Gens/Abeille/French-Treebank-fr.php) in CoNLL09 format
+Word-tag association features are from the Lefff dictionnary (http://alpage.inria.fr/~sagot/lefff-en.html)
+
+$ crfsuite tag -t -q -m ftb6.model ftb6_3.conll09.crfsuite
+Item accuracy: 35484 / 36340 (0.9764)
+Instance accuracy: 678 / 1235 (0.5490)
+Elapsed time: 2.230000 [sec] (553.8 [instance/sec])
